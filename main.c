@@ -18,8 +18,8 @@ triangle_t* triangles_to_render = NULL;
 bool is_running = false;
 int previous_frame_time = 0;
 
-vec3_t camera_position = { .x = 0, .y = 0, .z = -5 };
-float fov_factor = 640;
+vec3_t camera_position = { .x = 0, .y = 0, .z = -50 };
+float fov_factor = 1200;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Setup function to initialize variables and game objects
@@ -39,7 +39,7 @@ void setup(void) {
 
     // Loads the vertex and face values for the mesh data structure
     // load_cube_mesh_data();
-    load_obj_file_data("./assets/f22.obj");
+    load_obj_file_data("./assets/Sting-Sword-lowpoly.obj");
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -89,7 +89,7 @@ void update(void) {
 
     mesh.rotation.x += 0.01;
     mesh.rotation.y += 0.00;
-    mesh.rotation.z += 0.00;
+    mesh.rotation.z += 0.01;
 
     // Loop all triangle faces of our mesh
     int num_faces = array_length(mesh.faces);
