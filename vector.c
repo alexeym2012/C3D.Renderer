@@ -112,7 +112,6 @@ void vec3_normalize(vec3_t* v) {
     v->y /= length;
     v->z /= length;
 }
-
 vec3_t vec3_rotate_x(vec3_t v, float angle) {
     vec3_t rotated_vector = {
         .x = v.x,
