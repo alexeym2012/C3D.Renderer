@@ -51,7 +51,7 @@ void vec2_normalize(vec2_t* v) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-// Implementations of Vector 3D functions
+// Implementations of Vector 3 functions
 ///////////////////////////////////////////////////////////////////////////////
 float vec3_length(vec3_t v) {
     return sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
@@ -123,9 +123,9 @@ vec3_t vec3_rotate_x(vec3_t v, float angle) {
 
 vec3_t vec3_rotate_y(vec3_t v, float angle) {
     vec3_t rotated_vector = {
-        .x = v.x * cos(angle) - v.z * sin(angle),
+        .x = v.x * cos(angle) + v.z * sin(angle),
         .y = v.y,
-        .z = v.x * sin(angle) + v.z * cos(angle)
+        .z = -v.x * sin(angle) + v.z * cos(angle)
     };
     return rotated_vector;
 }
