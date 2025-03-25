@@ -31,7 +31,7 @@ mat4_t proj_matrix;
 ///////////////////////////////////////////////////////////////////////////////
 void setup(void) {
     // Initialize render mode and triangle culling method
-    render_method = RENDER_FILL_TRIANGLE;
+    render_method = RENDER_TEXTURED;
     cull_method = CULL_BACKFACE;
 
     // Allocate the required memory in bytes to hold the color buffer
@@ -54,11 +54,11 @@ void setup(void) {
     proj_matrix = mat4_make_perspective(fov, aspect, znear, zfar);
 
     // Loads the vertex and face values for the mesh data structure
-    load_cube_mesh_data();
-    // load_obj_file_data("./assets/f22.obj");
+    // load_cube_mesh_data();
+    load_obj_file_data("./assets/f22.obj");
 
     // Load the texture information from an external PNG file
-    load_png_texture_data("./assets/cube.png");
+    load_png_texture_data("./assets/f22.png");
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -112,8 +112,8 @@ void update(void) {
     triangles_to_render = NULL;
 
     // Change the mesh scale, rotation, and translation values per animation frame
-    mesh.rotation.x += 0.000;
-    mesh.rotation.y += 0.003;
+    mesh.rotation.x += -0.003;
+    mesh.rotation.y += 0.000;
     mesh.rotation.z += 0.000;
     mesh.translation.z = 5.0;
 
